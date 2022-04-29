@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% include 'include.html' %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>iksa_new</title>
+    
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+        <div class="container-fluid"><a class="navbar-brand" href="#">
+                <h2 class="text-center"><img src="{% static 'assets/img/inverted%20image.png' %}" width="80px" height="80px">&nbsp;Imran Krish Skating Association</h2>
+            </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                 <ul class="navbar-nav ms-auto ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Registrations</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'skater_registration' %}">Skater Registration</a>
+                            <a class="dropdown-item" href="{% url 'dancer_registration' %}">Dancer Registration</a>
+                            <a class="dropdown-item" href="{% url 'acservicebooking' %}">AC - Service Booking</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="btn btn-light border rounded-pill" href="{% url 'login_user' %}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row register-form">
+        <div class="col-md-8 offset-md-2">
+            <form class="custom-form" method="post">
+                {% csrf_token %}
+                <h1>AC - Service Booking</h1>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Name </label></div>
+                    <div class="col-sm-6 input-column"><input name="name" class="form-control" type="text"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Phone Number</label></div>
+                    <div class="col-sm-6 input-column"><input name="phno" class="form-control" type="text"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Address</label></div>
+                    <div class="col-sm-6 input-column"><textarea name="address" class="form-control"></textarea></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">City</label></div>
+                    <div class="col-sm-6 input-column"><input name="city" class="form-control" type="text"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Pincode</label></div>
+                    <div class="col-sm-6 input-column"><input name="pincode" class="form-control" type="text"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Date of Service</label></div>
+                    <div class="col-sm-6 input-column"><input name="dos" class="form-control" type="date"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Purpose</label></div>
+                    <div class="col-sm-6 input-column"><textarea name="purpose" class="form-control"></textarea></div>
+                </div><button class="btn btn-light submit-button" type="submit">Submit Form</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>

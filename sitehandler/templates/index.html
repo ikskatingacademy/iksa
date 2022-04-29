@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% include 'include.html' %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>iksa_new</title>
+    
+</head>
+
+<body style="margin-top: 0px;">
+    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+        <div class="container-fluid"><a class="navbar-brand" href="#">
+                <h2 class="text-center"><img src="{% static 'assets/img/inverted%20image.png' %}" width="80px" height="80px">&nbsp;Imran Krish Skating Association</h2>
+            </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                 <ul class="navbar-nav ms-auto ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Registrations</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'skater_registration' %}">Skater Registration</a>
+                            <a class="dropdown-item" href="{% url 'dancer_registration' %}">Dancer Registration</a>
+                            <a class="dropdown-item" href="{% url 'acservicebooking' %}">AC - Service Booking</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="btn btn-light border rounded-pill" href="{% url 'login_user' %}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Amazing Team</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle img-fluid" src="{% static 'assets/img/WhatsApp%20Image%202022-04-23%20at%203.21.54%20PM.jpeg' %}">
+                        <h4>Teja Ravipudi (Krish)</h4>
+                        <p class="text-muted">President</p>
+                        <p class="text-muted">Ph: +91 9515715847</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle img-fluid" src="{% static 'assets/img/WhatsApp%20Image%202022-04-23%20at%203.21.54%20PM.jpeg' %}">
+                        <h4>Teja Swaroop</h4>
+                        <p class="text-muted">Treasurer</p>
+                        <p class="text-muted">Ph: +91&nbsp;</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle img-fluid" src="{% static 'assets/img/WhatsApp%20Image%202022-04-23%20at%203.21.54%20PM.jpeg' %}">
+                        <h4>Sk Imran</h4>
+                        <p class="text-muted">Secretary</p>
+                        <p class="text-muted">Ph: +91&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="getintouch">
+        <div class="container modern-form">
+            <div class="text-center">
+                <h4 style="color: #212529;font-size: 45px;">Get in touch</h4>
+            </div>
+            <hr class="modern-form__hr">
+            <div class="modern-form__form-container">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col col-contact">
+                            <div class="modern-form__form-group--padding-r form-group mb-3"><input name="name" class="form-control input input-tr" type="text" placeholder="First Name">
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-contact">
+                            <div class="modern-form__form-group--padding-r form-group mb-3"><input name="phno" class="form-control input input-tr" type="text" placeholder="Phone Number">
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-contact">
+                            <div class="modern-form__form-group--padding-l form-group mb-3"><select class="form-select" name="mode">
+                                    <option value="Skating" selected="">Skating</option>
+                                    <option value="Dance">Dance</option>
+                                    <option value="acservice">AC - Service</option>
+                                </select>
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="modern-form__form-group--padding-t form-group mb-3"><textarea name="message" class="form-control input modern-form__form-control--textarea" placeholder="Message"></textarea>
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center"><button class="btn btn-primary submit-now" type="submit">Submit Now</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div>
+        <div style="background: var(--bs-gray);padding: 16px;">
+            <div class="row" style="margin: 0px;padding: 0px;">
+                <div class="col d-flex flex-column justify-content-center align-items-start justify-content-sm-center align-items-sm-start justify-content-md-center align-items-md-start" style="padding: 10.5px;">
+                    <p style="color: #d0d0d0;margin-bottom: 0px;font-size: 21px;">Imran Krish Skating Association</p><small style="color: #d0d0d0;">Gandhi park, Opposite Guntur Municipal Corporation</small><small style="color: #d0d0d0;">Guntur, Andhra Pradesh, India</small><small style="color: #d0d0d0;">Ph: +91 9515715847</small><small style="color: #d0d0d0;">E-Mail: imrankrishskatingacademy@gmail.com</small>
+                </div>
+                <div class="col d-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center" style="padding: 10.5px;"><a href="https://www.instagram.com/ik_skating_academy/" style="margin: 16px;font-size: 22px;padding: 4px;border-radius: 50%;border-width: 1px;border-style: solid;padding-right: 12px;padding-left: 12px;padding-top: 5px;padding-bottom: 5px;"><i class="icon ion-social-instagram"></i></a><a href="https://www.youtube.com/channel/UCfDR-CqqyaaYkfIMq1xbgMw" style="margin: 16px;padding: 4px;border-width: 1px;border-style: solid;border-radius: 50%;padding-top: 5px;padding-bottom: 3px;padding-right: 5px;"><i class="icon ion-social-youtube" style="font-size: 22px;"></i></a></div>
+                <div class="col d-flex flex-column justify-content-center align-items-start justify-content-sm-center align-items-sm-start justify-content-md-center align-items-md-start" style="padding: 10.5px;">
+                    <p style="color: #d0d0d0;margin-bottom: 0px;font-size: 20px;">Skating&nbsp; &nbsp; &nbsp; &nbsp; : +91 9515715847</p>
+                    <p style="color: #d0d0d0;margin-bottom: 0px;font-size: 20px;">Dance&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : +91 9010053217</p>
+                    <p style="color: #d0d0d0;margin-bottom: 0px;font-size: 20px;">AC - Service : +91 9491304010</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-lg-center justify-content-xl-center align-items-xl-center" style="color: var(--gray);background: #37434d;">
+            <p style="width: auto;margin-bottom: 8px;margin-top: 8px;color: var(--bs-secondary);">© 2020 Copyright: Aurora Interactive<br></p>
+        </div>
+    </div>
+
+
+    
+</body>
+
+</html>
